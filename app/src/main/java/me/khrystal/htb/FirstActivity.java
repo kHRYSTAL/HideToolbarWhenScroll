@@ -10,6 +10,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 
 import com.nineoldandroids.view.ViewHelper;
 
@@ -42,18 +43,18 @@ public class FirstActivity extends AppCompatActivity {
         recyclerView.addOnScrollListener(new FirstScrollListener() {
             @Override
             public void onShow() {
-                mToolbar.animate().translationY(-mToolbar.getHeight())
-                        .setInterpolator(new AccelerateInterpolator(2));
-                FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams)mFabButton.getLayoutParams();
-                int fabBottomMargin = lp.bottomMargin;
-                mFabButton.animate().translationY(mFabButton.getHeight()+fabBottomMargin)
-                        .setInterpolator(new AccelerateInterpolator(2)).start();
+                mToolbar.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2));
+                mFabButton.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2)).start();
             }
 
             @Override
             public void onHide() {
-                mToolbar.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2));
-                mFabButton.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2)).start();
+                mToolbar.animate().translationY(-mToolbar.getHeight())
+                        .setInterpolator(new AccelerateInterpolator(2));
+                RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams)mFabButton.getLayoutParams();
+                int fabBottomMargin = lp.bottomMargin;
+                mFabButton.animate().translationY(mFabButton.getHeight()+fabBottomMargin)
+                        .setInterpolator(new AccelerateInterpolator(2)).start();
             }
         });
 

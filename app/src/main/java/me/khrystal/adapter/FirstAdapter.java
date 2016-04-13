@@ -49,23 +49,25 @@ public class FirstAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         //is not header
-        if (position!=0){
+//        if (position!=0){
             SimpleViewHolder simpleViewHolder = (SimpleViewHolder)holder;
-            String itemText = mItemList.get(position-1);//header has first position
+//            String itemText = mItemList.get(position-1);//header has first position
+            String itemText = mItemList.get(position);
             simpleViewHolder.setItemText(itemText);
-        }
+//        }
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (position==0)
-            return TYPE_HEADER;
+//        if (position==0)
+//            return TYPE_HEADER;
         return TYPE_ITEM;
     }
 
     @Override
     public int getItemCount() {
         //1 is header
-        return mItemList == null ? 1 : mItemList.size() + 1;
+//        return mItemList == null ? 1 : mItemList.size() + 1;
+        return mItemList.size();
     }
 }

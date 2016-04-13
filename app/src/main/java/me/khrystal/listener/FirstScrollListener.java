@@ -22,7 +22,7 @@ public abstract class FirstScrollListener extends RecyclerView.OnScrollListener{
         int firstVisibleItem = ((LinearLayoutManager)
                 recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
 
-        if (firstVisibleItem==0){
+        if (firstVisibleItem==1){
             if (!mControlsVisible){
                 onShow();
                 mControlsVisible=true;

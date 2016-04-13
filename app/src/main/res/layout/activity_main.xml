@@ -18,4 +18,10 @@
         android:onClick="second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <Button
+        android:layout_marginTop="5dp"
+        android:text="Transparent When Scroll Second Ways"
+        android:onClick="third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

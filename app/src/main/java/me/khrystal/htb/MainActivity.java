@@ -20,4 +20,8 @@ public class MainActivity extends AppCompatActivity {
     public void second(View view) {
         startActivity(new Intent(MainActivity.this,SecondActivity.class));
     }
+
+    public void third(View view) {
+        startActivity(new Intent(MainActivity.this,ThridActivity.class));
+    }
 }
